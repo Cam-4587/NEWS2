@@ -37,18 +37,18 @@
       </div>
       <div id="scale1orscale2">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="scale1" value="option1">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="scale1" value="option1" required>
           <label class="form-check-label" for="inlineRadio1">Scale1</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="scale2" value="option2">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="scale2" value="option2" required>
           <label class="form-check-label" for="inlineRadio2">Scale2</label>
         </div>
       </div>
       <div class="form-group">
         <div class="oxygen-section">
-          <label for="exampleFormControlSelect1">Air or Oxygen</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <label for="o2supplementationDevice">Air or Oxygen</label>
+          <select class="form-control" id="o2supplementationDevice" required>
             <option>Air</option>
             <option>Oxygen</option>
           </select>
@@ -104,7 +104,7 @@
         <div class="form-group">
           <label for="temperature" class="col-sm-5 col-form-label">Temperature (°C)</label>
           <div class="col-sm-12">
-            <input type="number" maxlength="3" class="form-control" id="temperature" required>
+            <input type="number" maxlength="3"  class="form-control" id="temperature">
           </div>
         </div>
       </div>
