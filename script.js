@@ -2,12 +2,7 @@ const finalNews2Score = document.getElementById("news2score");
 const btn = document.getElementById("button");
 const o2supplementationDevice = document.getElementById("o2supplementationDevice");
 const o2supplementationSection = document.getElementById("oxygen-supplemtation-section");
-
-
-o2supplementationDevice.addEventListener("change", function colateOxygenDeviceInformation () {
-    let o2flow = Number(document.getElementById("o2flow").value);
-    let o2percentage = Number(document.getElementById("02percentage").value);
-    let maskType = document.getElementById("maskType").value;
+o2supplementationDevice.addEventListener("change", function () {
 
     if (o2supplementationDevice.value === "Oxygen") {
         o2supplementationSection.style.display = "block";
@@ -112,4 +107,23 @@ btn.addEventListener("click", function (event) {
     }
     const news2score = calculateNews2Score();
     finalNews2Score.innerHTML = `The Final News2 Score is <strong>${news2score}</strong>`;
+
+        // Oxygen device info
+    let o2Device = document.getElementById("o2supplementationDevice").value;
+    let o2flow = document.getElementById("o2flow").value;
+    let o2percentage = document.getElementById("02percentage").value;
+    let maskType = document.getElementById("maskType").value;
+    
+    let o2Info = '';
+    if (o2Device === "Oxygen") {
+        o2Info = `
+          <strong>Oxygen Device Details:</strong><br>
+          Flow: ${o2flow || 'N/A'} L/min<br>
+          Percentage: ${o2percentage || 'N/A'}%<br>
+          Mask Type: ${maskType || 'N/A'}
+        `;
+    } else {
+        o2Info = "Air selected (no oxygen device in use)";
+    }
+    document.getElementById("o2maskInfo").innerHTML = o2Info;
 });
