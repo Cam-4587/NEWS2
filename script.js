@@ -1,5 +1,21 @@
 const finalNews2Score = document.getElementById("news2score");
 const btn = document.getElementById("button");
+const o2supplementationDevice = document.getElementById("o2supplementationDevice");
+const o2supplementationSection = document.getElementById("oxygen-supplemtation-section");
+
+
+o2supplementationDevice.addEventListener("change", function colateOxygenDeviceInformation () {
+    let o2flow = Number(document.getElementById("o2flow").value);
+    let o2percentage = Number(document.getElementById("02percentage").value);
+    let maskType = document.getElementById("maskType").value;
+
+    if (o2supplementationDevice.value === "Oxygen") {
+        o2supplementationSection.style.display = "block";
+    } else {
+        o2supplementationSection.style.display = "none";
+    }
+});
+
 
 function calculateRespirationScore() {
     const respirations = Number(document.getElementById("respirations").value);
@@ -8,14 +24,13 @@ function calculateRespirationScore() {
     else if (respirations <= 20) return 0;
     else if (respirations <= 24) return 2;
     else if (respirations >= 25) return 3;
-    else return 3;
 }
 
 function calculateO2Saturations() {
     const o2saturations = Number(document.getElementById("02saturation").value);
     const scale1 = document.getElementById("scale1").checked;
     const scale2 = document.getElementById("scale2").checked;
-    const o2supplementationDevice = document.getElementById("o2supplementationDevice").checked;
+    const o2supplementationDeviceValue = o2supplementationDevice.value;
     let o2Score = 0;
 
     if (scale1) {
@@ -32,13 +47,13 @@ function calculateO2Saturations() {
         else if (o2saturations <= 94) o2Score = 1;
         else if (o2saturations <= 96) o2Score = 2;
         else if (o2saturations >= 97) o2Score = 3;
-        else o2Score = 3;
+        else o2Score = 0;
     } else {
         // No scale selected, return 0 or handle as needed
         o2Score = 0;
     }
 
-    if (o2supplementationDevice) {
+    if (o2supplementationDeviceValue === "Oxygen") {
         return o2Score + 2;
     } else {
         return o2Score;
@@ -52,7 +67,6 @@ function calculateBloodpressure() {
     else if (bloodPressure <= 110) return 1;
     else if (bloodPressure <= 120) return 0;
     else if (bloodPressure >= 220) return 3;
-    else return 3;
 }
 
 function calculatePulse() {
@@ -63,13 +77,12 @@ function calculatePulse() {
     else if (pulse <= 110) return 1;
     else if (pulse <= 130) return 2;
     else if (pulse > 130) return 3;
-    else return 3;
 }
 
 function calculateAlertness() {
     const alertness = document.getElementById("alertness").value;
     if (alertness === "Alert") return 0;
-    else return 3;
+    else if (alertness !== "Alert") return 3;
 }
 
 function calculateTemperature() {
@@ -79,7 +92,6 @@ function calculateTemperature() {
     else if (temperature <= 38) return 0;
     else if (temperature <= 39) return 1;
     else if (temperature > 39) return 2;
-    else return 3;
 }
 
 function calculateNews2Score() {
@@ -89,12 +101,15 @@ function calculateNews2Score() {
     const pulseScore = calculatePulse();
     const alertnessScore = calculateAlertness();
     const temperatureScore = calculateTemperature();
-
     return respirationScore + o2saturationScore + bloodPressureScore + pulseScore + alertnessScore + temperatureScore;
 }
 
-btn.addEventListener("click", function (e) {
-    e.preventDefault();
+btn.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+        form.reportValidity(); // Show native validation messages
+        return; // Stop if invalid
+    }
     const news2score = calculateNews2Score();
     finalNews2Score.innerHTML = `The Final News2 Score is <strong>${news2score}</strong>`;
 });
