@@ -105,7 +105,18 @@ btn.addEventListener("click", function (event) {
         form.reportValidity(); // Show native validation messages
         return; // Stop if invalid
     }
+
     const news2score = calculateNews2Score();
+
+    let color = "black";
+    if (news2score >= 7) {
+        color = "red";
+    } else if (news2score >= 4) {
+        color = "goldenrod";
+    }
+
+    // Set color on the element!
+    finalNews2Score.style.color = color;
     finalNews2Score.innerHTML = `The Final News2 Score is <strong>${news2score}</strong>`;
 
         // Oxygen device info
