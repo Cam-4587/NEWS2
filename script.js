@@ -124,7 +124,9 @@ btn.addEventListener("click", function (event) {
         || 
         respirationScore === 3 
         || 
-        o2saturationScore === 3 
+        o2saturationScore === 3
+        || 
+        o2saturationScore === 5
         || 
         bloodPressureScore === 3 
         || 
@@ -142,7 +144,7 @@ btn.addEventListener("click", function (event) {
 
     finalNews2Score.innerHTML = `
         Respirations Score is: <span style="color:${respirationScore === 3 ? 'red' : 'black'}">${respirationScore}</span><br><br>
-        Oxygen Saturation Score is: <span style="color:${o2saturationScore === 3 ? 'red' : 'black'}">${o2saturationScore}</span><br><br>
+        Oxygen Saturation Score is: <span style="color:${o2saturationScore === 3 || o2saturationScore === 5 ? 'red' : 'black'}">${o2saturationScore}</span><br><br>
         Blood Pressure Score is: <span style="color:${bloodPressureScore === 3 ? 'red' : 'black'}">${bloodPressureScore}</span><br><br>
         Pulse Score is: <span style="color:${pulseScore === 3 ? 'red' : 'black'}">${pulseScore}</span><br><br>
         Alertness Score is: <span style="color:${alertnessScore === 3 ? 'red' : 'black'}">${alertnessScore}</span><br><br>
