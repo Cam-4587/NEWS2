@@ -4,6 +4,7 @@ const o2supplementationDevice = document.getElementById("o2supplementationDevice
 const o2supplementationSection = document.getElementById("oxygen-supplemtation-section");
 const clearSection = document.getElementById("clear-section");
 const clearBtn = document.getElementById("clear");
+const toggleInfoBtn = document.getElementById("info-toggle");
 
 
 o2supplementationDevice.addEventListener("change", function () {
@@ -179,3 +180,11 @@ clearBtn.addEventListener("click", function (event) {
     clearSection.classList.add("none");
 });
 
+function toggleInfo() {
+  var x = document.getElementById("introductory-section");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
