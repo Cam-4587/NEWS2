@@ -2,6 +2,10 @@ const finalNews2Score = document.getElementById("news2score");
 const btn = document.getElementById("button");
 const o2supplementationDevice = document.getElementById("o2supplementationDevice");
 const o2supplementationSection = document.getElementById("oxygen-supplemtation-section");
+const clearSection = document.getElementById("clear-section");
+const clearBtn = document.getElementById("clear");
+
+
 o2supplementationDevice.addEventListener("change", function () {
 
     if (o2supplementationDevice.value === "Oxygen") {
@@ -113,6 +117,7 @@ btn.addEventListener("click", function (event) {
     const news2score = calculateNews2Score();
 
     let color = "black";
+
     if (
         news2score >= 7 
         || 
@@ -163,4 +168,14 @@ btn.addEventListener("click", function (event) {
         o2Info = "Air selected (no oxygen device in use)";
     }
     document.getElementById("o2maskInfo").innerHTML = o2Info;
+    clearSection.classList.remove("none");
 });
+
+clearBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("form").reset();
+    o2maskInfo.innerHTML = '';
+    finalNews2Score.innerHTML = '';
+    clearSection.classList.add("none");
+});
+
