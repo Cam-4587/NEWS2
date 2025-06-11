@@ -20,6 +20,121 @@
 
 <body>
   <main>
+    <section id="introductory-section">
+      <div class="text-center">
+        <h1>Introduction to NEWS2 Monitoring and Escalation Procedures</h1>
+        <p>
+          The National Early Warning Score 2 (NEWS2) system is used to identify patients at risk of clinical
+          deterioration. The frequency of vital signs monitoring and the escalation of care are determined by the total
+          NEWS2 score and specific parameter triggers. Timely escalation and appropriate clinical response are essential
+          to ensure patient safety and optimal outcomes.
+        </p>
+      </div>
+      <h2>Escalation Procedure Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>NEWS2 Score/Trigger</th>
+            <th>Minimum Monitoring Frequency</th>
+            <th>Actions &amp; Escalation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Total score = 0</strong></td>
+            <td>Every 12 hours</td>
+            <td>
+              <ul>
+                <li>Continue routine NEWS monitoring.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Total score = 1–4</strong></td>
+            <td>Every 4–6 hours</td>
+            <td>
+              <ul>
+                <li>Inform a registered nurse, who must assess the patient.</li>
+                <li>Registered nurse decides if increased frequency of monitoring and/or escalation of care is required.
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Score of 3 in a single parameter</strong></td>
+            <td>Every 1 hour</td>
+            <td>
+              <ul>
+                <li>Registered nurse to inform the medical team caring for the patient.</li>
+                <li>Medical team will review and decide if escalation of care is necessary.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Total score = 5 or more</strong><br>
+              <span style="color:darkred;">Urgent response threshold</span>
+            </td>
+            <td>Every 1 hour</td>
+            <td>
+              <ul>
+                <li>Registered nurse to immediately inform the medical team caring for the patient.</li>
+                <li>Request urgent assessment by a clinician or team with core competencies in the care of acutely ill
+                  patients.</li>
+                <li>Provide clinical care in an environment with monitoring facilities.</li>
+                <li>
+                  If NEWS2 score of 5 or 6 is new (unless alternative escalation threshold set):
+                  <ul>
+                    <li>Assessment is expected within 60 minutes.</li>
+                    <li>Consider moving the patient to an environment with monitoring facilities.</li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Total score = 7 or more</strong><br>
+              <span style="color:red;">Emergency response threshold</span>
+            </td>
+            <td>Continuous monitoring</td>
+            <td>
+              <ul>
+                <li>Registered nurse to immediately inform the medical team caring for the patient (at least specialist
+                  registrar level).</li>
+                <li>Emergency assessment by team with critical care/airway management skills.</li>
+                <li>Consider transfer to Level 2 or 3 care (HDU/ICU).</li>
+                <li>Provide care in an environment with monitoring facilities.</li>
+                <li>
+                  If NEWS2 score of 7+ is new (unless alternative escalation threshold set):
+                  <ul>
+                    <li>Assessment is expected within 30 minutes.</li>
+                    <li>Monitor every 30 minutes initially.</li>
+                    <li>A clinician competent in the assessment of acutely ill patients will be decided locally and
+                      could be the emergency response team.</li>
+                    <li>If there is no improvement, senior clinician review is expected within 60 minutes.</li>
+                    <li>Consider moving the patient to an environment with monitoring facilities.</li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="text-center">
+        <p>
+          <strong>Always follow local protocols and use clinical judgment alongside NEWS2 scores for the best patient
+            care.</strong>
+        </p>
+
+        <p>
+          <strong>Always follow local protocols and use clinical judgment alongside NEWS2 scores for the best patient
+            care.</strong>
+        </p>
+      </div>
+    </section>
     <form action="post" id="form">
       <h1>News2 Calculator</h1>
       <div class="form-group row">
@@ -117,7 +232,7 @@
       <div class="news2-section">
         <p class="text-align-center text-center" id="o2maskInfo"></p>
       </div>
-      <div  class="clear-section none" id="clear-section">
+      <div class="clear-section none" id="clear-section">
         <button class="d-flex btn btn-warning justify-content" id="clear">Clear</button>
       </div>
     </form>
